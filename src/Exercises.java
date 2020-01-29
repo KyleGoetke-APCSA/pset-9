@@ -106,7 +106,18 @@ public class Exercises {
     }
 
     public boolean increasing(ArrayList<Integer> numbers) {
-        // write your code here
+        // input verification
+        if (numbers == null) {
+            return false;
+        } else if (numbers.size() < 1) {
+            return false;
+        }
+
+        for (int i = 1; i < numbers.size()-1; i++) {
+            if (numbers.get(i-1) < numbers.get(i) && numbers.get(i) < numbers.get(i+1)) {
+                return true;
+            }
+        }
 
         return false;    // default return value to ensure compilation
     }
