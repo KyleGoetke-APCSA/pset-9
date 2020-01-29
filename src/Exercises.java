@@ -77,10 +77,10 @@ public class Exercises {
         }
 
         for (int i = 0; i < numbers.size(); i++) {
-			if (numbers.get(i) < 0) {
+            if (numbers.get(i) < 0) {
                 return -1;
             }
-		}
+        }
 
         double firstElement = numbers.get(0);
         double lastElement = numbers.get(numbers.size() - 1);
@@ -123,9 +123,34 @@ public class Exercises {
     }
 
     public boolean everywhere(ArrayList<Integer> numbers, int x) {
-        // write your code here
+        // input verification
+        if (numbers == null || numbers.size() < 1) {
+            return false;
+        }
 
-        return false;    // default return value to ensure compilation
+        boolean inLastPosition = false;
+        int gapBetween = 0;
+        for (int i = 0; i < numbers.size(); i++) {
+            if (numbers.get(i) == x) {
+                inLastPosition = true;
+                gapBetween = 0;
+            } else {
+                if (i == 1 && inLastPosition == false) {
+                    return false;
+                } else if (inLastPosition == false) {
+                    gapBetween++;
+                }
+                inLastPosition = false;
+            }
+
+            if (gapBetween == 2) {
+                return false;
+            }
+        }
+
+        return true;
+
+        // return false;    // default return value to ensure compilation
     }
 
     public boolean consecutive(ArrayList<Integer> numbers) {
