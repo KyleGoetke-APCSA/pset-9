@@ -8,70 +8,91 @@ public class Exercises {
     2) ./grademe.sh [exercise]
     */
 
-	public boolean commonEnd(ArrayList<Integer> a, ArrayList<Integer> b) {
+    public boolean commonEnd(ArrayList<Integer> a, ArrayList<Integer> b) {
         //input verification
         if (a == null || a.isEmpty() || b == null || b.isEmpty()) {
-			return false;
-		}
+            return false;
+        }
 
         if ((a.get(0) == b.get(0)) || ( a.get(a.size()-1) == b.get(b.size()-1)) ) {
             return true;
         }
 
-		return false;	// default return value to ensure compilation
-	}
+        return false;    // default return value to ensure compilation
+    }
 
-	public ArrayList<String> endsMeet(ArrayList<String> values, int n) {
-		// write your code here
+    public ArrayList<String> endsMeet(ArrayList<String> values, int n) {
+        // input verification
+        ArrayList<String> emptyArrayList = new ArrayList();
+        if (values == null || values.isEmpty() || n < 0 || values.size() < n) {
+            return emptyArrayList;
+        }
 
-		return null;	// default return value to ensure compilation
-	}
+        // write your code here
+        ArrayList<String> combinedArrayList = new ArrayList();
+        int valueOfN = n;
 
-	public int difference(ArrayList<Integer> numbers) {
-		// write your code here
+        // go from first index until nth index
+        for (int i = 0; i < n; i++) {
+            combinedArrayList.add(values.get(i));
+        }
 
-		return -1;		// default return value to ensure compilation
-	}
+        // go from length - nth index until last index
+        for (int i = n; i < n * 2; i++) {
+            combinedArrayList.add(values.get(values.size() - valueOfN));
+            valueOfN--;
+        }
 
-	public double biggest(ArrayList<Double> numbers) {
-		// write your code here
+        return combinedArrayList;
 
-		return -1;		// default return value to ensure compilation
-	}
+        // return null; default return value to ensure compilation
+    }
 
-	public ArrayList<String> middle(ArrayList<String> values) {
-		// write your code here
+    public int difference(ArrayList<Integer> numbers) {
+        // write your code here
 
-		return null;	// default return value to ensure compilation
-	}
+        return -1;        // default return value to ensure compilation
+    }
 
-	public boolean increasing(ArrayList<Integer> numbers) {
-		// write your code here
+    public double biggest(ArrayList<Double> numbers) {
+        // write your code here
 
-		return false;	// default return value to ensure compilation
-	}
+        return -1;        // default return value to ensure compilation
+    }
 
-	public boolean everywhere(ArrayList<Integer> numbers, int x) {
-		// write your code here
+    public ArrayList<String> middle(ArrayList<String> values) {
+        // write your code here
 
-		return false;	// default return value to ensure compilation
-	}
+        return null;    // default return value to ensure compilation
+    }
 
-	public boolean consecutive(ArrayList<Integer> numbers) {
-		// write your code here
+    public boolean increasing(ArrayList<Integer> numbers) {
+        // write your code here
 
-		return false;	// default return value to ensure compilation
-	}
+        return false;    // default return value to ensure compilation
+    }
 
-	public boolean balance(ArrayList<Integer> numbers) {
-		// write your code here
+    public boolean everywhere(ArrayList<Integer> numbers, int x) {
+        // write your code here
 
-		return false;	// default return value to ensure compilation
-	}
+        return false;    // default return value to ensure compilation
+    }
 
-	public int clumps(ArrayList<String> values) {
-		// write your code here
+    public boolean consecutive(ArrayList<Integer> numbers) {
+        // write your code here
 
-		return -1;		// default return value to ensure compilation
-	}
+        return false;    // default return value to ensure compilation
+    }
+
+    public boolean balance(ArrayList<Integer> numbers) {
+        // write your code here
+
+        return false;    // default return value to ensure compilation
+    }
+
+    public int clumps(ArrayList<String> values) {
+        // write your code here
+
+        return -1;        // default return value to ensure compilation
+    }
 }
