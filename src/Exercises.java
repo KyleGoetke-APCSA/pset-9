@@ -96,7 +96,6 @@ public class Exercises {
             return firstElement;
         }
 
-
         return -1;        // default return value to ensure compilation
     }
 
