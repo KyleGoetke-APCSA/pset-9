@@ -71,7 +71,31 @@ public class Exercises {
     }
 
     public double biggest(ArrayList<Double> numbers) {
-        // write your code here
+        // input verification
+        if (numbers == null || numbers.isEmpty() || numbers.size() % 2 == 0 || numbers.size() < 3) {
+            return -1;
+        }
+
+        for (int i = 0; i < numbers.size(); i++) {
+			if (numbers.get(i) < 0) {
+                return -1;
+            }
+		}
+
+        double firstElement = numbers.get(0);
+        double lastElement = numbers.get(numbers.size() - 1);
+        double middleElement = numbers.get(numbers.size() / 2);
+
+        if (firstElement > lastElement && firstElement > middleElement) {
+            return firstElement;
+        } else if (lastElement > middleElement && lastElement > firstElement) {
+            return lastElement;
+        } else if (middleElement > lastElement && middleElement > firstElement) {
+            return middleElement;
+        } else if (middleElement == lastElement && middleElement == firstElement) {
+            return firstElement;
+        }
+
 
         return -1;        // default return value to ensure compilation
     }
