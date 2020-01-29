@@ -28,7 +28,6 @@ public class Exercises {
             return emptyArrayList;
         }
 
-        // write your code here
         ArrayList<String> combinedArrayList = new ArrayList();
         int valueOfN = n;
 
@@ -99,10 +98,28 @@ public class Exercises {
         return -1;        // default return value to ensure compilation
     }
 
-    public ArrayList<String> middle(ArrayList<String> values) {
-        // write your code here
+    public ArrayList<String> middle(ArrayList<String> words) {
+        // input verification
+        ArrayList<String> empty = new ArrayList();
+        if (words == null || words.isEmpty()) {
+            return empty;
+        } else if (words.size() < 3 || words.size() % 2 == 0) {
+            return empty;
+        }
 
-        return null;    // default return value to ensure compilation
+        for (int i = 0; i < words.size(); i++) {
+            if ((words.get(i) == null) ? true : false) {
+                return empty;
+            }
+        }
+
+        ArrayList<String> finalArrayList = new ArrayList();
+        finalArrayList.add(words.get((int) Math.floor(words.size() / 2) - 1));
+        finalArrayList.add(words.get((int) Math.floor(words.size() / 2)));
+        finalArrayList.add(words.get((int) Math.floor(words.size() / 2) + 1));
+        return finalArrayList;
+
+        // return null;    // default return value to ensure compilation
     }
 
     public boolean increasing(ArrayList<Integer> numbers) {
