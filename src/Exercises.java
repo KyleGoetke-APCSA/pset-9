@@ -57,13 +57,13 @@ public class Exercises {
         int largestValue = numbers.get(0);
         int smallestValue = numbers.get(0);
         for (int i = 0; i < numbers.size(); i++) {
-			if (numbers.get(i) > largestValue) {
+            if (numbers.get(i) > largestValue) {
                 largestValue = numbers.get(i);
             }
             if (numbers.get(i) < smallestValue) {
                 smallestValue = numbers.get(i);
             }
-		}
+        }
 
         return largestValue - smallestValue;
 
