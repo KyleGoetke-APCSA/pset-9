@@ -2,8 +2,15 @@ import java.util.ArrayList;
 
 public class Exercises {
 
+    /*
+    HOW TO RUN THIS
+    1) cd ~/???/pset-9/tests
+    2) ./grademe.sh [exercise]
+    */
+
 	public boolean commonEnd(ArrayList<Integer> a, ArrayList<Integer> b) {
-		if (a == null || a.isEmpty() || b == null || b.isEmpty()) {
+        //input verification
+        if (a == null || a.isEmpty() || b == null || b.isEmpty()) {
 			return false;
 		}
 
