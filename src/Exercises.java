@@ -49,9 +49,25 @@ public class Exercises {
     }
 
     public int difference(ArrayList<Integer> numbers) {
-        // write your code here
+        // input verification
+        if (numbers == null || numbers.size() < 1) {
+            return -1;
+        }
 
-        return -1;        // default return value to ensure compilation
+        int largestValue = numbers.get(0);
+        int smallestValue = numbers.get(0);
+        for (int i = 0; i < numbers.size(); i++) {
+			if (numbers.get(i) > largestValue) {
+                largestValue = numbers.get(i);
+            }
+            if (numbers.get(i) < smallestValue) {
+                smallestValue = numbers.get(i);
+            }
+		}
+
+        return largestValue - smallestValue;
+
+        // return -1; // default return value to ensure compilation
     }
 
     public double biggest(ArrayList<Double> numbers) {
