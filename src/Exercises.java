@@ -50,7 +50,7 @@ public class Exercises {
 
     public int difference(ArrayList<Integer> numbers) {
         // input verification
-        if (numbers == null || numbers.size() < 1) {
+        if (numbers == null || numbers.isEmpty() || numbers.size() < 1) {
             return -1;
         }
 
