@@ -154,7 +154,36 @@ public class Exercises {
     }
 
     public boolean consecutive(ArrayList<Integer> numbers) {
-        // write your code here
+        // input verification
+        if (numbers == null || numbers.size() < 3) {
+            return false;
+        }
+
+        int remainder = -1;
+        int previousRemainder = -1;
+        int numbersInARow = 0;
+        for (int i = 0; i < numbers.size(); i++) {
+            remainder = numbers.get(i) % 2;
+            if (remainder == 1) {
+                if (previousRemainder == 1) {
+                    numbersInARow++;
+                } else {
+                    numbersInARow = 1;
+                }
+            } else {
+                if (previousRemainder == 0) {
+                    numbersInARow++;
+                } else {
+                    numbersInARow = 1;
+                }
+            }
+
+            if (numbersInARow == 3) {
+                return true;
+            }
+
+            previousRemainder = remainder;
+        }
 
         return false;    // default return value to ensure compilation
     }
