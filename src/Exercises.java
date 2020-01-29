@@ -189,7 +189,27 @@ public class Exercises {
     }
 
     public boolean balance(ArrayList<Integer> numbers) {
-        // write your code here
+        // input verification
+        if (numbers == null || numbers.size() < 2) {
+            return false;
+        }
+
+        for (int i = 0; i < numbers.size() - 1; i++) {
+            int firstHalfSum = 0;
+            int secondHalfSum = 0;
+
+            for (int x = i; x >= 0; x--) {
+                firstHalfSum += numbers.get(x);
+            }
+
+            for (int z = i + 1; z < numbers.size(); z++) {
+                secondHalfSum += numbers.get(z);
+            }
+
+            if (firstHalfSum == secondHalfSum) {
+                return true;
+            }
+        }
 
         return false;    // default return value to ensure compilation
     }
